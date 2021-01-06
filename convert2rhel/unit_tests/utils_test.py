@@ -19,6 +19,8 @@
 import re
 import os
 
+from convert2rhel.utils import get_os_release
+
 try:
     import unittest2 as unittest  # Python 2.6 support
 except ImportError:
@@ -212,3 +214,6 @@ class TestUtils(unittest.TestCase):
             path = utils.get_rpm_path_from_yumdownloader_output("cmd not important", output, utils.TMP_DIR)
 
             self.assertEqual(path, os.path.join(utils.TMP_DIR, self.DOWNLOADED_RPM_FILENAME))
+
+    def test_get_os_release_name(self):
+        assert "NAME" in get_os_release()

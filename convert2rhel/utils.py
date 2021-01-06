@@ -533,3 +533,13 @@ class RestorablePackage(object):
 
 
 changed_pkgs_control = ChangedRPMPackagesController()  # pylint: disable=C0103
+
+
+def get_os_release():
+    """Parse /etc/os-release into dict."""
+    os_release = {}
+    with open("/etc/os-release") as f:
+        for line in f:
+            k, v = line.rstrip().split("=")
+            os_release[k] = v.strip('"')
+    return os_release

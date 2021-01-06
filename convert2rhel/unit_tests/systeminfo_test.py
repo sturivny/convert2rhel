@@ -22,6 +22,8 @@ import logging
 import os
 import shutil
 
+from convert2rhel.utils import get_os_release
+
 try:
     import unittest2 as unittest  # Python 2.6 support
 except ImportError:
@@ -131,6 +133,10 @@ class TestSysteminfo(unittest.TestCase):
         data=[['.M.......  g /etc/pki/ca-trust/extracted/java/cacerts'],
               ['.M.......  g /etc/pki/ca-trust/extracted/java/cacerts',
                'S.5....T.  c /etc/yum.conf']]))
+    @unittest.skipIf(
+        not get_os_release()["NAME"].startswith("CentOS"),
+        reason="This test assumed to be run on CentOS system only."
+    )
     def test_modified_rpm_files_diff_with_differences_after_conversion(self):
         system_info.modified_rpm_files_diff()
         self.assertTrue(any('S.5....T.  c /etc/yum.conf' in elem for elem in system_info.logger.info_msgs))
