@@ -20,7 +20,7 @@ from setuptools import setup, find_packages
 
 from man.build_manpage import build_manpage
 
-
+# next changes
 # Utility function to read content of a file.
 def read(fname):
     return open(os.path.join(os.path.dirname(os.path.abspath(__file__)), fname)).read()
