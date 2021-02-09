@@ -46,3 +46,5 @@ setup(
     cmdclass={'build_manpage': build_manpage},
     include_package_data=True
 )
+
+## new feature here
