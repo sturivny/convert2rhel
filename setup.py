@@ -26,6 +26,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(os.path.abspath(__file__)), fname)).read()
 
 
+#change in main
 setup(
     name='convert2rhel',
     version='0.15',
