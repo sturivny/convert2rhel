@@ -20,12 +20,13 @@ from setuptools import setup, find_packages
 
 from man.build_manpage import build_manpage
 
-
+# next changes
 # Utility function to read content of a file.
 def read(fname):
     return open(os.path.join(os.path.dirname(os.path.abspath(__file__)), fname)).read()
 
 
+#change in main
 setup(
     name='convert2rhel',
     version='0.15',
@@ -45,3 +46,7 @@ setup(
     cmdclass={'build_manpage': build_manpage},
     include_package_data=True
 )
+
+## new feature here
+
+## bugfix

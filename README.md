@@ -10,7 +10,7 @@ For details about this tool, please consult one of the following sources:
 Contributions are welcome, please look over [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to get started.
 
 ## Contact
-
+Line added by Adam :)
 For questions, troubleshooting, bug reports and feature requests:
 
 * create [an issue](https://github.com/oamg/convert2rhel/issues/new) here on GitHub,
